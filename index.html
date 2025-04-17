@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2211102253 / W8</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container mt-5 text-center">
+    <!-- Nama -->
+    <div 
+    class="d-inline-block  px-3 py-3 mb-2"
+    style="border:3px solid black;font-family: Arial, Helvetica, sans-serif;font-weight: bold;font-size: 1.25rem;">
+      Maulana Malik Hidayat
+    </div>
+    <br />
+    <!-- NIM -->
+    <div 
+    class="d-inline-block px-3 py-2 mb-4 fs-5"
+    style="border:3px solid black;font-family: Arial, Helvetica, sans-serif;font-weight: bold;">
+      NIM: 2211102228
+    </div>
+    <br />
+
+    <!-- Tombol Modal -->
+    <button
+      type="button"
+      class="btn btn-primary mb-3"
+      data-bs-toggle="modal"
+      data-bs-target="#infoModal"
+    >
+      Modal
+    </button>
+
+    <!-- Tombol warna -->
+    <div class="d-flex flex-column align-items-center mb-5" style="width: 150px; margin: 0 auto;">
+      <button id="btn-red"    class="btn btn-danger mb-2 w-100">Merah</button>
+      <button id="btn-yellow" class="btn btn-warning mb-2 w-100">Kuning</button>
+      <button id="btn-green"  class="btn btn-success mb-2 w-100">Hijau</button>
+      <button id="btn-blue"   class="btn btn-primary mb-2 w-100">Biru</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalLabel">Informasi</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container p-3 border rounded" id="modalContent">
+            <p><strong>Nama Panjang:</strong> Maulana Malik Hidayat</p>
+            <p><strong>Nama Panggilan:</strong> Malik</p>
+            <p><strong>Hobi:</strong> Scroll Fesnuk</p>
+            <p><strong>Asal:</strong> Purworejo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const modalContent = document.getElementById("modalContent");
+
+    const translations = {
+      red: {
+        bgColor: "#fa666e",
+        html: `
+          <p><strong>Full Name:</strong> Maulana Malik Hidayat</p>
+          <p><strong>Nickname:</strong> Malik</p>
+          <p><strong>Hobby:</strong> Scrolling Fesnuk</p>
+          <p><strong>Origin:</strong> Purworejo</p>
+        `
+      },
+      yellow: {
+        bgColor: "#f2ee68",
+        html: `
+          <p><strong>Nama Lengkap:</strong> Maulana Malik Hidayat</p>
+          <p><strong>Panggilan:</strong> Malik</p>
+          <p><strong>Hobi:</strong> Scroll Fesnuk</p>
+          <p><strong>Dari:</strong> Purworejo</p>
+        `
+      },
+      green: {
+        bgColor: "#5af261",
+        html: `
+          <p><strong>Nombre completo:</strong> Maulana Malik Hidayat</p>
+          <p><strong>Apodo:</strong> Malik</p>
+          <p><strong>Pasa tiempo:</strong> Scroll Fesnuk</p>
+          <p><strong>Origen:</strong> Purworejo</p>
+        `
+      },
+      blue: {
+        bgColor: "#6d93f2",
+        html: `
+          <p><strong>フルネーム:</strong> Maulana Malik Hidayat</p>
+          <p><strong>ニックネーム:</strong> Malik</p>
+          <p><strong>趣味:</strong> Scroll Fesnuk</p>
+          <p><strong>出身:</strong> Purworejo</p>
+        `
+      }
+    };
+
+    document.getElementById("btn-red").addEventListener("click", () => {
+      document.body.style.backgroundColor = translations.red.bgColor;
+      modalContent.innerHTML = translations.red.html;
+    });
+
+    document.getElementById("btn-yellow").addEventListener("click", () => {
+      document.body.style.backgroundColor = translations.yellow.bgColor;
+      modalContent.innerHTML = translations.yellow.html;
+    });
+
+    document.getElementById("btn-green").addEventListener("click", () => {
+      document.body.style.backgroundColor = translations.green.bgColor;
+      modalContent.innerHTML = translations.green.html;
+    });
+
+    document.getElementById("btn-blue").addEventListener("click", () => {
+      document.body.style.backgroundColor = translations.blue.bgColor;
+      modalContent.innerHTML = translations.blue.html;
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
